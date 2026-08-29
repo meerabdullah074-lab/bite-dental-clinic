@@ -1,0 +1,274 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------------- */
+/* Theme variables — mirrors the Design System doc. Single source of    */
+/* truth for color, radius, and font tokens used across the site.       */
+/* -------------------------------------------------------------------- */
+
+:root {
+  /* Color tokens */
+  --color-background: #faf9f6;
+  --color-surface: #ffffff;
+
+  --color-primary: #0f5c5c;
+  --color-primary-dark: #0a3f3f;
+  --color-editorial-dark: #16232b;
+
+  --color-accent: #e8a33d;
+  --color-accent-hover: #d08f2e;
+
+  --color-whatsapp: #25d366;
+  --color-success: #8fbfa3;
+
+  --color-text-primary: #1e2a2a;
+  --color-text-secondary: #5a6b6b;
+  --color-text-on-dark: #f2f0ea;
+
+  --color-border: #e4e1d9;
+  --color-star-rating: #f5b841;
+
+  /* Radius tokens */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  /* Shadow tokens */
+  --shadow-sm: 0 1px 3px rgba(30, 42, 42, 0.08);
+  --shadow-md: 0 8px 24px rgba(30, 42, 42, 0.1);
+  --shadow-lg: 0 16px 40px rgba(30, 42, 42, 0.14);
+
+  /* Spacing tokens (base unit 8px) */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+  --space-2xl: 96px;
+  --space-2xl-mobile: 48px;
+
+  /* Font tokens.
+     Using a single clean, modern sans-serif system (Inter-style stack)
+     across both display and body text for a consistent, professional
+     look with no serif/sans mismatch. */
+  --font-display-stack: "Plus Jakarta Sans", "Inter", ui-sans-serif,
+    system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-jakarta: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui,
+    -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --font-display: var(--font-display-stack);
+  --font-sans: var(--font-jakarta);
+}
+
+/* -------------------------------------------------------------------- */
+/* Tailwind v4 theme mapping — exposes the tokens above as Tailwind      */
+/* utilities (bg-background, text-primary, rounded-lg, shadow-md, etc.) */
+/* -------------------------------------------------------------------- */
+
+@theme inline {
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-editorial-dark: var(--color-editorial-dark);
+
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
+
+  --color-whatsapp: var(--color-whatsapp);
+  --color-success: var(--color-success);
+
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-on-dark: var(--color-text-on-dark);
+
+  --color-border: var(--color-border);
+  --color-star-rating: var(--color-star-rating);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-full: var(--radius-full);
+
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+}
+
+/* -------------------------------------------------------------------- */
+/* Base layer                                                            */
+/* -------------------------------------------------------------------- */
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+}
+
+/* Visible focus states everywhere, per accessibility strategy */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Accordion expand/collapse keyframes, used by ui/accordion.tsx */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.25s ease-in-out;
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.25s ease-in-out;
+}
+
+/* Answer text fades in ~100ms after the accordion row starts expanding,
+   rather than appearing instantly the moment height reveals it — a
+   small delayed fade rather than an instant pop. Used by
+   ui/accordion.tsx's AccordionContent inner wrapper. Content unmounts on
+   close (Radix's default), so this replays correctly on every reopen. */
+@keyframes accordion-content-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-accordion-fade {
+  animation: accordion-content-fade 0.3s ease-out 0.1s both;
+}
+
+/* Subtle "Open Now" indicator pulse — used by OpenStatusBadge. Kept
+   gentle (opacity only, no scale/movement) per the animation system's
+   "calm over energetic" principle. */
+@keyframes open-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-open-pulse {
+  animation: open-pulse 2s ease-in-out infinite;
+}
+
+/* Loading-bar sweep used by app/loading.tsx */
+@keyframes loading-bar-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+.animate-loading-bar {
+  animation: loading-bar-sweep 1.2s ease-in-out infinite;
+}
+
+/* Hides the scrollbar on horizontally-scrolling scroll-snap carousels
+   (e.g. Testimonials) while native touch/trackpad swipe and keyboard
+   scrolling remain fully functional — only the visual scrollbar chrome
+   is hidden. */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Lightweight prose styling for legal pages (Privacy Policy, Terms),
+   scoped to a single class rather than pulling in a typography plugin
+   for two pages' worth of static content. */
+.legal-content h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.legal-content h2:first-child {
+  margin-top: 0;
+}
+
+.legal-content p {
+  margin-top: 0.75rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.legal-content ul {
+  margin-top: 0.75rem;
+  padding-left: 1.25rem;
+  list-style-type: disc;
+  color: var(--color-text-secondary);
+}
+
+.legal-content li {
+  margin-top: 0.375rem;
+  line-height: 1.6;
+}
+
+.legal-content a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Respect reduced motion globally as a fallback; AnimatedSection also
+   checks this via Framer Motion's useReducedMotion hook at the component
+   level for finer control. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

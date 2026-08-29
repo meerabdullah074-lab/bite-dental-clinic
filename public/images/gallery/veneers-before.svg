@@ -1,0 +1,17 @@
+<svg width="480" height="360" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t">
+<title id="t">Close-up illustration of uneven, discolored teeth before veneers</title>
+<rect width="480" height="360" fill="#D9A986" />
+<ellipse cx="240" cy="180" rx="260" ry="200" fill="#D9A986" />
+<path d="M 90 150 C 150 110, 330 110, 390 150 L 390 175 C 330 145, 150 145, 90 175 Z" fill="#C97C74" />
+<rect x="90" y="161" width="35" height="46" rx="7" transform="rotate(-8 107.5 184.0)" fill="#D9C79A" stroke="#B8896B" stroke-width="2" />
+<rect x="129" y="152" width="35" height="46" rx="7" transform="rotate(5 146.5 175.0)" fill="#D9C79A" stroke="#B8896B" stroke-width="2" />
+<rect x="168" y="159" width="35" height="54" rx="7" transform="rotate(-4 185.5 186.0)" fill="#D9C79A" stroke="#B8896B" stroke-width="2" />
+<rect x="207" y="149" width="35" height="60" rx="7" transform="rotate(2 224.5 179.0)" fill="#D9C79A" stroke="#B8896B" stroke-width="2" />
+<rect x="246" y="155" width="35" height="60" rx="7" transform="rotate(-3 263.5 185.0)" fill="#D9C79A" stroke="#B8896B" stroke-width="2" />
+<rect x="285" y="160" width="35" height="54" rx="7" transform="rotate(6 302.5 187.0)" fill="#D9C79A" stroke="#B8896B" stroke-width="2" />
+<rect x="324" y="151" width="35" height="46" rx="7" transform="rotate(-7 341.5 174.0)" fill="#D9C79A" stroke="#B8896B" stroke-width="2" />
+<rect x="363" y="163" width="35" height="46" rx="7" transform="rotate(4 380.5 186.0)" fill="#D9C79A" stroke="#B8896B" stroke-width="2" />
+<path d="M 70 235 C 140 285, 340 285, 410 235 C 410 300, 350 335, 240 335 C 130 335, 70 300, 70 235 Z" fill="#B5675A" />
+<path d="M 70 150 C 140 95, 340 95, 410 150 C 410 130, 350 100, 240 100 C 130 100, 70 130, 70 150 Z" fill="#B5675A" />
+<path d="M 90 232 C 150 250, 330 250, 390 232" stroke="#5A2E28" stroke-width="3" fill="none" opacity="0.35" />
+</svg>

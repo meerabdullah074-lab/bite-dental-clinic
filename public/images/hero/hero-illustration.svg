@@ -1,0 +1,49 @@
+<svg width="640" height="640" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="heroArtTitle">
+  <title id="heroArtTitle">Abstract illustration representing gentle, modern dental care</title>
+
+  <!-- Organic blob backdrop -->
+  <path
+    d="M 168 96
+       C 264 40, 424 40, 508 128
+       C 592 216, 592 368, 520 464
+       C 448 560, 288 592, 176 528
+       C 64 464, 48 336, 64 240
+       C 80 144, 96 136, 168 96 Z"
+    fill="#0F5C5C"
+    opacity="0.08"
+  />
+
+  <!-- Secondary soft ring -->
+  <circle cx="452" cy="176" r="88" fill="#E8A33D" opacity="0.10" />
+  <circle cx="156" cy="480" r="64" fill="#8FBFA3" opacity="0.14" />
+
+  <!-- Card / surface plane -->
+  <rect x="120" y="164" width="400" height="340" rx="32" fill="#FFFFFF" />
+  <rect x="120" y="164" width="400" height="340" rx="32" fill="#0F5C5C" opacity="0.04" />
+
+  <!-- Stylized smile arc -->
+  <path
+    d="M 196 336 C 232 396, 408 396, 444 336"
+    stroke="#0F5C5C"
+    stroke-width="14"
+    stroke-linecap="round"
+    fill="none"
+  />
+
+  <!-- Tooth shapes along the smile -->
+  <g fill="#FFFFFF" stroke="#0F5C5C" stroke-width="6">
+    <path d="M 224 320 C 224 300, 244 292, 252 306 C 260 292, 280 300, 278 322 C 276 344, 262 356, 252 344 C 242 356, 226 342, 224 320 Z" />
+    <path d="M 292 328 C 292 306, 312 298, 320 314 C 328 298, 348 306, 346 330 C 344 354, 330 366, 320 352 C 310 366, 294 350, 292 328 Z" />
+    <path d="M 362 320 C 362 300, 382 292, 390 306 C 398 292, 418 300, 416 322 C 414 344, 400 356, 390 344 C 380 356, 364 342, 362 320 Z" />
+  </g>
+
+  <!-- Sparkle accent -->
+  <g fill="#E8A33D">
+    <path d="M 448 220 L 458 244 L 482 254 L 458 264 L 448 288 L 438 264 L 414 254 L 438 244 Z" />
+  </g>
+  <circle cx="180" cy="220" r="7" fill="#E8A33D" />
+  <circle cx="210" cy="200" r="4" fill="#8FBFA3" />
+
+  <!-- Base shadow ellipse -->
+  <ellipse cx="320" cy="524" rx="150" ry="16" fill="#16232B" opacity="0.06" />
+</svg>

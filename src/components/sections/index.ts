@@ -1,0 +1,12 @@
+export { Hero } from "./Hero";
+export { ClinicShowcase } from "./ClinicShowcase";
+export { TrustBar } from "./TrustBar";
+export { Services } from "./Services";
+export { WhyChooseUs } from "./WhyChooseUs";
+export { MeetTheDoctor } from "./MeetTheDoctor";
+export { Photos } from "./Photos";
+export { BeforeAfterGallery } from "./BeforeAfterGallery";
+export { Testimonials } from "./Testimonials";
+export { HowItWorks } from "./HowItWorks";
+export { FAQ } from "./FAQ";
+export { Contact } from "./Contact";
