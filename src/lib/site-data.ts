@@ -491,7 +491,7 @@ export const faqs: FAQItem[] = [
     id: "faq-timings",
     question: "What are your clinic timings?",
     answer:
-      "We're open daily from 5 PM onward. Message us on WhatsApp or call ahead to confirm same-day availability.",
+      "We're open daily from 1 PM onward. Message us on WhatsApp or call ahead to confirm same-day availability.",
   },
   {
     id: "faq-emergency",
